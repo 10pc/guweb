@@ -61,10 +61,6 @@
   }
 }
 
-.splash {
-  background: hsl(var(--main), 40%, 40%);
-}
-
 .footer {
   margin: 0;
 }
