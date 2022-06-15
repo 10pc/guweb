@@ -1,4 +1,5 @@
 DISCORD RULES
+```
 1- No unnecessary, or extreme toxicity. We understand you may not like something and that arguments can happen, but you should never go too far when it comes to one. Swearing is allowed.
 2- No discriminatory speech, slander, or hate speech of any form. The N-word is allowed, however you may not use it in a offensive manner
 3- No NSFW, gore, or any disgusting type of shit. NSFW is allowed in nsfw , but gore, animal porn, animal abuse, child porn, and child abuse are always an instant ban, regardless of context or not.
@@ -10,8 +11,10 @@ DISCORD RULES
 9- No excessive spamming/flooding, this includes pinging.
 10- No ghost pinging, shits annoying asl and i have a bot that can track all ghost pings, if u ghost ping im banning u.
 11- The most important rule, have fun!
+```
 
 IN-GAME RULES
+```
 1- Timewarp is NOT allowed. Anybody using timewarp will be wiped.
 2- No EXTREMELY blatant or broken cheats. This includes things like auto (any form), CS Changer, Replay Editing, Score/pp multiplier, or mass teleportation.
 3- Autopilot with relax hack enabled is NOT allowed.
@@ -56,6 +59,7 @@ Resync Leniency Factor: doesn't matter
 
 Maples V2 and Easy Mode have NO LIMITS.
 
-TO CLARIFY; ANY CHEAT THAT IS NOT LISTED ON HERE IS NOT ALLOWED. IF YOU WISH TO HAVE AN UNLISTED CHEAT FEATURED HERE, PLEASE DM ME.
+If your current cheat is unlisted, please join the Discord server and contact a server admin.
 
-8- You may NOT use more than 1 cheat instances at once
+8- You may NOT use more than one cheat instances at once
+```
