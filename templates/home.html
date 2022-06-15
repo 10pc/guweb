@@ -86,10 +86,10 @@
             <h1 class="title is-spaced is-size-2-desktop is-size-1-fullhd">{{ appName() }}</h1>
             <h2 class="subtitle">
               Welcome to Abypass! We are an osu! private server that revolves around the usage of
-              cheats and external tools. For more information, please check 
+              cheats and external tools. For more information, please check
               out <a href="https://discord.gg/gNQKMgxuXH">Our Discord</a>
               and <a href="https://www.youtube.com/channel/UCe-yBRbuL_bp6NDBpSkA--A">Our YouTube</a>
-             
+
               Please, make yourself at home!
             </h2>
             <div class="buttons">
@@ -128,17 +128,20 @@
     /* layout */
 
     body {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      height: -webkit-fill-available;
-      background-image: url("https://cdn.discordapp.com/attachments/985726977136816198/985945177271201822/t1pveoo9qkt61.png");
+      background-image: url(https://cdn.discordapp.com/attachments/970753321335918624/986402163641176114/t1pveoo9qkt61.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
     .home-hero{
-        background-image: url("https://cdn.discordapp.com/attachments/985726977136816198/985945177271201822/t1pveoo9qkt61.png");
+      background: url(https://cdn.discordapp.com/attachments/970753321335918624/986402163641176114/t1pveoo9qkt61.jpg);
+      filter: blur(5px) greyscale(50%) brightness(0.2);
     }
 
+    .home-hero:hover{
+      background: url(https://cdn.discordapp.com/attachments/970753321335918624/986402163641176114/t1pveoo9qkt61.jpg)
+      filter: blur(5px) greyscale(25%) brightness(0.5);
+    }
 
     html {
       position: relative;
@@ -512,14 +515,7 @@
     }
 
     .noti-col-label:after {
-      position: absolute;
-      content: "";
-      height: 3px;
-      background-image: https://cdn.discordapp.com/attachments/985726977136816198/985945177271201822/t1pveoo9qkt61.png
-      border-radius: 10px;
-      left: 0;
-      bottom: 0;
-      right: 0;
+
     }
 
     @media (min-width: 900px) {
