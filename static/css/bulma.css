@@ -391,7 +391,7 @@ textarea {
 }
 html {
   box-sizing: border-box;
-  background-color: hsl(var(--main), 10%, 10%);
+  background-image: url("https://cutewallpaper.org/22/study-anime-wallpapers/1699428993.jpg");
   font-size: 15px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -5337,7 +5337,6 @@ a.list-item {
   padding: 20px;
 }
 .navbar {
-  background-color: hsl(var(--main), 45%, 45%);
   min-height: 4rem;
   position: relative;
   z-index: 30;
@@ -5780,7 +5779,7 @@ a.navbar-item:hover {
   }
 }
 .hero.is-fullheight-with-navbar {
-  min-height: calc(100vh - 4rem);
+  min-height: 100%;
 }
 .pagination {
   font-size: 15px;
@@ -8794,15 +8793,13 @@ label.panel-block:hover {
   }
 }
 .footer {
-  background-color: hsl(var(--main), 10%, 15%);
   padding: 3rem 1.5rem 6rem;
 }
 h6 {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-.hero {
-  background-color: hsl(var(--main), 10%, 15%);
+
 }
 .button {
   transition: all 0.2s ease;
