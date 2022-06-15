@@ -5625,7 +5625,7 @@ a.navbar-item:hover {
   .navbar-dropdown a.navbar-item.is-active,
   .navbar.is-transparent .navbar-dropdown a.navbar-item.is-active {
     background-color: transparent;
-    color: hsl(var(--main), 45%, 45%);
+    color: transparent;
   }
   .navbar-burger {
     display: none;
@@ -9018,7 +9018,7 @@ h6 {
   background: 0 0;
 }
 .navbar.is-primary .navbar-dropdown a.navbar-item.is-active {
-  background-color: hsl(var(--main), 45%, 45%);
+  background-color: transparent;
 }
 @media screen and (max-width: 1023px) {
   .navbar .navbar-menu {
