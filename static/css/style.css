@@ -23,6 +23,7 @@ html {
   padding: 20px;
   margin-top: 39px;
   align-self: center;
+  text-align-last: center;
 }
 
 .main-block {
@@ -38,6 +39,7 @@ html {
 
 .flex-vcenter {
   align-self: center;
+  text-align: center;
 }
 
 .flex-lcenter {

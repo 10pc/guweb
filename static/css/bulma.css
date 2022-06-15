@@ -97,7 +97,7 @@ html {
 .table:not(:last-child),
 .tabs:not(:last-child),
 .title:not(:last-child) {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 .delete,
 .modal-close {
