@@ -16,6 +16,7 @@
 
 .main-block {
   width: 1024px;
+  background-color: blue;
 }
 
 .my-con {
@@ -45,10 +46,12 @@
   }
   #home-hero .columns.flex-vcenter {
     padding: 0 20px;
+    
   }
   .main-block {
     width: initial;
     height: 285px;
+    
   }
   #mascot {
     display: none !important;
@@ -58,6 +61,7 @@
   }
   #home-hero {
     height: 300px;
+    background-image: url(https://cdn.discordapp.com/attachments/970753321335918624/986402163641176114/t1pveoo9qkt61.jpg);
   }
 }
 
