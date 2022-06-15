@@ -140,5 +140,11 @@
             background-size: cover !important;
         }
     {% endif %}
+    {% if customizations['background'] == False %}
+      body {
+          background-image: url("https://cutewallpaper.org/22/study-anime-wallpapers/1699428993.jpg");
+          background-repeat: none;
+      }
+    {% endif %}
 </style>
 {% endblock bottom %}
