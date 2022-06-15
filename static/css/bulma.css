@@ -397,7 +397,7 @@ html {
   -webkit-font-smoothing: antialiased;
   min-width: 300px;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -467,7 +467,7 @@ body {
   color: #fff;
 }
 a {
-  color: hsl(var(--main), 65%, 70%);
+  color: #f2f2f2;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -1788,7 +1788,7 @@ fieldset[disabled] .button.is-dark.is-outlined {
   color: hsl(var(--main), 10%, 15%);
 }
 .button.is-primary {
-  background-color: hsl(var(--main), 45%, 45%);
+  background-color: #5491AD;
 }
 .button.is-primary,
 .button.is-primary.is-hovered,
@@ -9021,7 +9021,7 @@ h6 {
 }
 @media screen and (max-width: 1023px) {
   .navbar .navbar-menu {
-    background-color: hsl(var(--main), 45%, 45%);
+    background-color: rgba(0,0,0,0.2);
     border-radius: 0 0 0.4em 0.4em;
   }
 }
@@ -9696,7 +9696,7 @@ body > .navbar {
     font-size: 3rem !important;
   }
   .is-size-2-desktop {
-    font-size: 2.5rem !important;
+    font-size: 4rem !important;
   }
   .is-size-3-desktop {
     font-size: 2rem !important;
