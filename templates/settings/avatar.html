@@ -99,18 +99,5 @@
   </div>
 </div>
 {% endif %}
-<style>
-    {% if customizations['background'] == True %}
-        body {
-            background: linear-gradient(hsl(var(--main), 25%, 25%, 20%), hsl(var(--main), 10%, 10%)), url("/backgrounds/{{ session['user_data']['id'] }}");
-            background-size: cover !important;
-        }
-    {% endif %}
-    {% if customizations['background'] == False %}
-      body {
-          background-image: url("https://cutewallpaper.org/22/study-anime-wallpapers/1699428993.jpg");
-          background-repeat: none;
-      }
-    {% endif %}
-</style>
+
 {% endblock %}
