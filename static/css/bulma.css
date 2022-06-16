@@ -3390,7 +3390,7 @@ a.tag:hover {
 }
 .subtitle:not(.is-spaced) + .title,
 .title:not(.is-spaced) + .subtitle {
-  margin-top: -0.25rem;
+  margin-top: -0.5rem;
 }
 .title.is-1 {
   font-size: 3rem;
