@@ -2,7 +2,7 @@
 {% block title %} Profile {% endblock %}
 
 {% macro playstats(map) %}
-<% map['beatmap']['diff'].toFixed(2) %>* +<% ("+ " + map[`mods_readable`] + " ").replace("NM", "").replace("RXNC", "NCRX").replace("APNC", "NCAP").replace("HDHRNC", "HDNCHR").replace("NFNC", "NCNF").replace("RX", "").replace("AP", "").replace("+ ", "").replace("+ ", "+") %>
+<% map['beatmap']['diff'].toFixed(2) %>* +<% ("+ " + map[`mods_readable`] + " ").replace("NM", "").replace("RXNC", "NCRX").replace("APNC", "NCAP").replace("HDHRNC", "HDNCHR").replace("NFNC", "NCNF").replace("HRDT", "DTHR").replace("RX", "").replace("AP", "").replace("+ ", "").replace("+ ", "+") %>
 {% endmacro %}
 
 {% macro scores(title, id) %}
