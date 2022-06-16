@@ -1,3 +1,6 @@
+<title>Abypass - Profile</title>
+<meta name="description" content="{{ user['name'] }}'s profile">
+
 {% extends 'base.html' %}
 {% block title %} Profile {% endblock %}
 
@@ -210,19 +213,19 @@
     <div class="second-block">
         <div class="columns is-marginless two-sides">
             <div class="column is-one-third" v-cloak>
-                <!--<div class="header" v-if='data.stats[`rank_global_${modegulag}`] != -1'>
+                <div class="header" v-if='data.stats.out[modegulag].rank != 0'>
                     <div class="title">
                         <i class="fas fa-user-friends"></i> Rank
                     </div>
                 </div>
-                <div class="stats-block rank-block" v-if='data.stats[`rank_global_${modegulag}`] != -1'>
+                <div class="stats-block rank-block" v-if='data.stats.out[modegulag].rank != 0'>
                     <table class="is-striped">
                         <tbody>
                             <tr>
                                 <td>Global rank</td>
                                 <td class="right-aligned">
                                     <span id="global-rank">
-                                        <% '#' + data.stats[`rank_global_${modegulag}`] %>
+                                        <% '#' + data.stats.out[modegulag].rank %>
                                     </span>
                                 </td>
                             </tr>
@@ -230,7 +233,7 @@
                                 <td>Country rank</td>
                                 <td class="right-aligned">
                                     <span id="country-rank">
-                                        <% '#' + data.stats[`rank_country_${modegulag}`] %>
+                                        <% '#' + data.stats.out[modegulag].country_rank %>
                                     </span>
                                 </td>
                             </tr>
@@ -322,7 +325,7 @@
                                     <div class="rank-single">
                                         <div class="map-rank rank-A">A</div>
                                         <div class="rank-amount">
-                                            <% data.stats.out[modegulag].a_count %>
+                                            <% data.stats.out[modegulag].a_count.toFixed(2) %>
                                         </div>
                                     </div>
                                 </div>
