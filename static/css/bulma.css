@@ -5688,7 +5688,6 @@ a.navbar-item:hover {
     background-color: transparent;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1);
     display: none;
     font-size: 0.875rem;
