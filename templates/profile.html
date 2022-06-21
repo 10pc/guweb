@@ -368,7 +368,7 @@
         }
     {% endif %}
     {% if user['customisation']['background'] == True %}
-        body {
+        html {
             background: linear-gradient(hsl(var(--main), 25%, 25%, 20%), hsl(var(--main), 10%, 10%)), url("/backgrounds/{{ user['id'] }}");
             background-size: cover;
             background-clip: content-box;
