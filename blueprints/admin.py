@@ -175,7 +175,7 @@ for i in users:
 
 
     #Pager
-    page_foot = []
+page_foot = []
     if page == 1:
         page_foot.append([page, " active"])
         page_foot.append([page+1, ""])
