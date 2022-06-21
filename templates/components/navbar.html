@@ -49,9 +49,10 @@
         <div class="navbar-end">
             {% if session.authenticated %}
             <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">
-                    {{ session.user_data['name'] }}
-                </a>
+              <div class="profile-avatar-area">
+                  <img src="https://a.{{ domain() }}/{{ user['id'] }}" alt="avatar" class="rounded-avatar profile-avatar"
+                      onError="this.src='/static/images/avatar_notwork.png';">
+              </div>
                 <div class="navbar-dropdown">
                     <a class="navbar-item" href="/u/{{ session.user_data['id'] }}">
                         Profile
