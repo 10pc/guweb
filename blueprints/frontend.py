@@ -7,6 +7,7 @@ import hashlib
 import os
 import time
 import datetime
+import pandas
 from pandas import to_datetime
 
 from cmyui.logging import Ansi
