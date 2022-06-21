@@ -126,7 +126,7 @@
 }
 
 .badge {
-  background-color: #4E5D94;
+  background-color: hsl(var(--main), 30%, 50%);
   border-radius: 50px;
   transition: 0.3s ease;
   width: 32px;
