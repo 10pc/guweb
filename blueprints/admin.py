@@ -173,51 +173,6 @@ for i in users:
             elif Privileges.Normal in ipriv:
                 i['priv'] = "Unverified"
 
-
-    #Pager
-    page_foot = []
-        if page == 1:
-            page_foot.append([page, " active"])
-            page_foot.append([page+1, ""])
-            page_foot.append([page+2, ""])
-            page_foot.append([page+3, ""])
-            page_foot.append([page+4, ""])
-            page_foot.append([page-1, " disabled"])
-            page_foot.append([page+1, ""])
-        elif page == 2:
-            page -= 1
-            page_foot.append([page, ""])
-            page_foot.append([page+1, " active"])
-            page_foot.append([page+2, ""])
-            page_foot.append([page+3, ""])
-            page_foot.append([page+4, ""])
-            page_foot.append([page-1, ""])
-            page_foot.append([page+1, ""])
-        elif page == max_page:
-            page_foot.append([max_page-4, ""])
-            page_foot.append([max_page-3, ""])
-            page_foot.append([max_page-2, ""])
-            page_foot.append([max_page-1, ""])
-            page_foot.append([max_page, " active"])
-            page_foot.append([max_page-1, ""])
-            page_foot.append([max_page+1, "disabled"])
-        elif page == max_page-1:
-            page_foot.append([max_page-4, ""])
-            page_foot.append([max_page-3, ""])
-            page_foot.append([max_page-2, ""])
-            page_foot.append([max_page-1, " active"])
-            page_foot.append([max_page, ""])
-            page_foot.append([max_page-1, ""])
-            page_foot.append([max_page+1, ""])
-        else:
-            page_foot.append([page-2, ""])
-            page_foot.append([page-1, ""])
-            page_foot.append([page, " active"])
-            page_foot.append([page+1, ""])
-            page_foot.append([page+2, ""])
-            page_foot.append([page-1, ""])
-            page_foot.append([page+1, ""])
-
     # fetch data from database
     user_data = await glob.db.fetch(
         'SELECT COUNT(id) registered, '
