@@ -48,11 +48,8 @@
 
         <div class="navbar-end">
             {% if session.authenticated %}
-            <div class="navbar-item has-dropdown is-hoverable">
-              <div class="profile-avatar-area">
-                  <img src="https://a.{{ domain() }}/{{ user['id'] }}" alt="avatar" class="rounded-avatar profile-avatar"
-                      onError="this.src='/static/images/avatar_notwork.png';">
-              </div>
+            <div class="navbar-avatar-area navbar-item has-dropdown is-hoverable">
+              <img src="https://a.{{ domain() }}/{{ user['id'] }}" alt="avatar" class="rounded-avatar navbar-avatar" onError="this.src='/static/images/avatar_notwork.png';">
                 <div class="navbar-dropdown">
                     <a class="navbar-item" href="/u/{{ session.user_data['id'] }}">
                         Profile
@@ -83,3 +80,20 @@
     </div>
     </div>
 </nav>
+<style>
+  .navbar-avatar-area {
+    padding: 0 0 0 45px;
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .navbar-avatar {
+    width: 185px;
+    height: 185px;
+    margin-top: -5.5rem;
+    border-radius: 16px;
+    object-fit: cover;
+    transition: 0.2s ease;
+  }
+</style>
