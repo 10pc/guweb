@@ -10,13 +10,13 @@ a:hover {
 }
 
 .main-block {
-  background-color: hsl(var(--main), 10%, 15%);
+  background-color: rgba(0, 0, 0, 0.5);
   margin-top: 0;
   width: auto;
 }
 
 .leaderboard-banner {
-  background-color: hsl(var(--main), 30%, 50%);
+  background-color: rgba(0, 0, 0, 0.3);
   height: 194px;
   border-radius: 0;
   border-top-right-radius: 8px;
