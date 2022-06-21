@@ -67,13 +67,9 @@
                             {{ user.email }}
                         </span>
                         <div class="user-footer">
-                            <span class="user-mapper">
-                            {{ timeago.format((datetime.datetime.fromtimestamp(user.creation_time)),
-                                (datetime.datetime.now() + datetime.timedelta(seconds = 60 * 3.4))) }}
-                            </span>
                             <div class="d-flex align-items-baseline">
                                 <span>
-                                {{ timeago.format((datetime.datetime.fromtimestamp(user.latest_activity)),
+                                {{ timeago.format((datetime.datetime.fromtimestamp(user.creation_time)),
                                     (datetime.datetime.now() + datetime.timedelta(seconds = 60 * 3.4))) }}
                                 </span>
                                 <div class="target-button newmaps-color">
@@ -104,7 +100,7 @@
                                 class="map-image-picture"></div>
                         <div class="map-title-block">
                             <div class="map-title"><a class="user-link">
-                                    [{{ maps.mode }}] {{ maps.title }} [{{ maps.version }}]
+                                    [{{ maps.mode }}.replace("0", "osu!std")] {{ maps.title }} [{{ maps.version }}]
                                 </a></div>
                             <div class="play-stats">
                                 {{ maps.score }} / {{ maps.max_combo }}x
