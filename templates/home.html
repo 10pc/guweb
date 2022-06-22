@@ -5,6 +5,16 @@
 <link rel="stylesheet" href="/static/css/pages/home.css">
 {% endblock %}
 
+<script>
+  axios.get('https://api.abypass.wtf/get_player_count')
+  .then((response) => {
+    var online = response.data.counts.online;
+    var registered = response.data.counts.total;
+    document.getElementById('online').innerHTML = online;
+    document.getElementById('total').innerHTML = registered;
+  });
+</script>
+
 {% block content %}
 
 {% if flash %}
@@ -45,6 +55,14 @@
           The cheating experience you've been waiting for...
         </h2>
       </div>
+      <div class="server-stats-2">
+          <div class="server-stats-online">
+            <span><span id="online" style="color: #49fa55;"></span> Online</span>
+          </div>
+          <div class="server-stats-registered">
+            <span><span id="registered" style="color: #ff4bf3;"></span> Registered</span>
+          </div>
+        </div>
     </div>
   </div>
 </div>
