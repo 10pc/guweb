@@ -5,16 +5,6 @@
 <link rel="stylesheet" href="/static/css/pages/home.css">
 {% endblock %}
 
-<script>
-  axios.get('https://api.abypass.wtf/get_player_count')
-  .then((response) => {
-    var online = response.data.counts.online;
-    var registered = response.data.counts.total;
-    document.getElementById('online').innerHTML = online;
-    document.getElementById('total').innerHTML = registered;
-  });
-</script>
-
 {% block content %}
 
 {% if flash %}
@@ -66,5 +56,44 @@
     </div>
   </div>
 </div>
+
+<script>
+  axios.get('https://api.abypass.wtf/get_player_count')
+  .then((response) => {
+    var online = response.data.counts.online;
+    var registered = response.data.counts.total;
+    document.getElementById('online').innerHTML = online;
+    document.getElementById('total').innerHTML = registered;
+  });
+</script>
+
+<style>
+  .server-stats-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 500;
+    max-height: 24px !important;
+    width: 260px !important;
+    border-radius: 9001px;
+    background-color: rgb(120, 142, 171);
+    padding: 3px;
+    margin-bottom: 10px;
+    max-width: 350px !important;
+  }
+
+  .server-stats-online {
+    display: flex;
+    margin-left: 30px;
+    justify-content: flex-start;
+  }
+
+  .server-stats-registered {
+    display: flex;
+    margin-right: 30px;
+    justify-content: flex-end;
+  }
+</style>
 
 {% endblock %}
