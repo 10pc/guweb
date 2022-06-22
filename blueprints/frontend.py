@@ -638,12 +638,9 @@ async def get_profile_background(user_id: int):
     return b'{"status":404}'
 
 @frontend.route('/score/<score_id>')
-@frontend.route('/score/<score_id>/<mods>')
 async def get_player_score(score_id:int=0, mods:str = "vn"):
     if score_id == 0:
         return await flash('error', "This score does not exist!", "home")
-    if mods.lower() not in ["vn", "rx", "ap"]:
-        return await flash('error', "Valid mods are vn, rx and ap!", "home")
 
     # Check score
     score = await glob.db.fetch("SELECT * FROM "
