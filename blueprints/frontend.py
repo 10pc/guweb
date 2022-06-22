@@ -647,7 +647,7 @@ async def get_player_score(score_id:int=0, mods:str = "vn"):
 
     # Check score
     score = await glob.db.fetch("SELECT * FROM "
-                               f"scores_{mods.lower()} "
+                               f"scores"
                                 "WHERE id=%s", score_id)
     if not score:
         return await flash('error', "Score not found!", "home")
@@ -735,7 +735,7 @@ async def get_player_score(score_id:int=0, mods:str = "vn"):
             group_list.append(["✓", "#28a40c"])
 
     #Get status
-    async with glob.http.get(f"https://osu.abypass.wtf/api/get_player_status?id={user['id']}") as resp:
+    async with glob.http.get(f"https://api.abypass.wtf/get_player_status?id={user['id']}") as resp:
         resp = await resp.json()
         if resp['player_status']['online'] == True:
             player_status = ["#38c714", "Online"]
