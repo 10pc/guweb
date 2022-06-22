@@ -25,7 +25,18 @@
                     </div>
                     <div class="map-title-block">
                         <div class="map-title">
-                            <a class="beatmap-link" :href="'https://catboy.best/b/' + map.beatmap.id">
+                          <script>
+                              if (map.mods & 7) {
+                                  mods = "rx"
+                              }
+                              else if (map.mods & 13) {
+                                  mods = "ap"
+                              }
+                              else {
+                                  mods = "vn"
+                              }
+                          </script>
+                          <a class="beatmap-link" v-bind:href="'https://abypass.wtf/score/' + map.id + '/' + mods">
                                 <% map.beatmap.artist %> - <% map.beatmap.title %> [<% map.beatmap.version %>]
                             </a>
                         </div>
