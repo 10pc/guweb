@@ -64,7 +64,10 @@
   })
   .then(function(data){
     console.log(data[0].online)
+    document.getElementById('online').innerHTML=data[0].online
+
     console.log(data[0].total)
+    document.getElementById('registered').innerHTML=data[0].total
   })
 
 </script>
