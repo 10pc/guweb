@@ -46,10 +46,10 @@
         </h2>
         <div class="server-stats-2">
             <div class="server-stats-online">
-              <span><span id="online" style="color: #49fa55;"></span> ONLINE</span>
+              <span><span id="online" style="color: mediumaquamarine;"></span> ONLINE</span>
             </div>
             <div class="server-stats-registered">
-              <span><span id="registered" style="color: #ff4bf3;"></span> REGISTERED</span>
+              <span><span id="registered" style="color: lightskyblue;"></span> REGISTERED</span>
             </div>
           </div>
       </div>
@@ -58,19 +58,25 @@
 </div>
 
 <script>
-  axios.get('https://api.abypass.wtf/get_player_count')
-  .then((response) => {
-    var online = response.data.counts.online;
-    var registered = response.data.counts.total;
-    document.getElementById('online').innerHTML = online;
-    document.getElementById('total').innerHTML = registered;
-  });
+  fetch("https://api.abypass.wtf/get_player_count")
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(data){
+    console.log(data[0].online)
+    document.getElementById('online').innerHTML=data[0].online
+
+    console.log(data[0].total)
+    document.getElementById('registered').innerHTML=data[0].total
+  })
+
 </script>
+
 <style>
   .server-stats-2 {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     font-size: 13px;
     font-weight: 500;
     max-height: 24px !important;

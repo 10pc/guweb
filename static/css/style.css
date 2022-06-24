@@ -28,7 +28,6 @@ html {
 
 .main-block {
   width: inherit;
-  background: hsl(var(--main), 10%, 15%);
 }
 
 /* stuffs */
@@ -84,9 +83,9 @@ html {
 }
 
 .is-weeb {
-  background: hsl(var(--main), 30%, 50%);
-  border-top-right-radius: 16px;
-  border-top-left-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 0px 0px 16px 16px;
 }
 
 .headericon {
