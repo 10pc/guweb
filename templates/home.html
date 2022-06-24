@@ -58,6 +58,15 @@
 </div>
 
 <script>
+  fetch("https://api.abypass.wtf/get_player_count")
+  .then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("NETWORK RESPONSE ERROR");
+    }
+  })
+
   function displayonline(data) {
     const online = data.counts.online[0];
     const onlinedata = document.getElementById("online");
@@ -68,19 +77,6 @@
     const totaldata = document.getElementById("registered");
   }
 
-  fetch("https://api.abypass.wtf/get_player_count")
-  .then((response) => {
-    if (response.ok) {
-      return response.json();
-    } else {
-      throw new Error("NETWORK RESPONSE ERROR");
-    }
-  })
-  .then(data => {
-    displayonline(data);
-    displaytotal(data);
-    console.log(data);
-  })
   .catch((error) => console.error("FETCH ERROR:", error));
 </script>
 
