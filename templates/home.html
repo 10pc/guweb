@@ -63,7 +63,13 @@
     return response.json();
   })
   .then(function(data){
-    console.log(data);
+    let html = '';
+    data.forEach(function(players)){
+      html += `
+        <li>${players}</li>
+      `;
+    });
+
   })
 
 </script>
