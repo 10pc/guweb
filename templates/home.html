@@ -58,16 +58,26 @@
 </div>
 
 <script>
-  axios.get('https://api.abypass.wtf/get_player_count')
+  function displayonline(data) {
+    const online = counts.online[0];
+    const onlinedata = document.getElementById("online");
+  }
+
+  fetch("https://api.abypass.wtf/get_player_count")
   .then((response) => {
-    var online = response.data.counts.online;
-    var registered = response.data.counts.total;
-    document.getElementById('online').innerHTML = online;
-    console.log('online');
-    document.getElementById('registered').innerHTML = registered;
-    console.log('registered');
-  });
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("NETWORK RESPONSE ERROR");
+    }
+  })
+  .then(data => {
+    console.log(data);
+    displayonline(data)
+  })
+  .catch((error) => console.error("FETCH ERROR:", error));
 </script>
+
 <style>
   .server-stats-2 {
     display: inline-flex;
