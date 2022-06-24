@@ -63,7 +63,9 @@
     var online = response.data.counts.online;
     var registered = response.data.counts.total;
     document.getElementById('online').innerHTML = online;
-    document.getElementById('total').innerHTML = registered;
+    console.log('online');
+    document.getElementById('registered').innerHTML = registered;
+    console.log('registered');
   });
 </script>
 <style>
