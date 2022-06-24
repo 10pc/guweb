@@ -1,4 +1,6 @@
 .main-block{
+    background-color: hsl(var(--main),10%,15%);
+    color: #fff;
     padding: 20px;
 }
 
