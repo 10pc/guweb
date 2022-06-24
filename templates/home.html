@@ -63,6 +63,11 @@
     const onlinedata = document.getElementById("online");
   }
 
+  function displaytotal(data) {
+    const total = data.counts.total[0];
+    const totaldata = document.getElementById("registered");
+  }
+
   fetch("https://api.abypass.wtf/get_player_count")
   .then((response) => {
     if (response.ok) {
@@ -72,8 +77,9 @@
     }
   })
   .then(data => {
+    displayonline(data);
+    displaytotal(data);
     console.log(data);
-    displayonline(data)
   })
   .catch((error) => console.error("FETCH ERROR:", error));
 </script>
