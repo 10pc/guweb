@@ -643,9 +643,9 @@ async def get_player_score(score_id:int=0, mods:str = "vn"):
         return await flash('error', "This score does not exist!", "home")
             if mods.lower() not in VALID_MODS:
 
+
     # Check score
-    score = await glob.db.fetch("SELECT * FROM scores"
-                                "WHERE id=%s", score_id)
+    score = await glob.db.fetch("SELECT * FROM scores WHERE id=%s", score_id)
     if not score:
         return await flash('error', "Score not found!", "home")
 
