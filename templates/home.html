@@ -67,6 +67,8 @@
     }
   })
 
+  .catch((error) => console.error("FETCH ERROR:", error));
+
   function displayonline(data) {
     const online = data.counts.online[0];
     const onlinedata = document.getElementById("online");
@@ -76,8 +78,6 @@
     const total = data.counts.total[0];
     const totaldata = document.getElementById("registered");
   }
-
-  .catch((error) => console.error("FETCH ERROR:", error));
 </script>
 
 <style>
