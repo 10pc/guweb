@@ -641,8 +641,6 @@ async def get_profile_background(user_id: int):
 async def get_player_score(score_id:int=0, mods:str = "vn"):
     if not score_id:
         return await flash('error', "This score does not exist!", "home")
-            if mods.lower() not in VALID_MODS:
-
 
     # Check score
     score = await glob.db.fetch("SELECT * FROM scores WHERE id=%s", score_id)
