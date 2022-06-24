@@ -1449,7 +1449,7 @@ a.has-text-danger:hover {
 }
 .box {
   background-color: hsl(var(--main), 10%, 15%);
-  border-radius: 8px;
+  border-radius: 0px 0px 16px 16px;
   box-shadow: none;
   color: #fff;
   display: block;
