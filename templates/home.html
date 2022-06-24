@@ -59,10 +59,10 @@
 
 <script>
   fetch("https://api.abypass.wtf/get_player_count")
-  .then((data) => {
-    return data.json();
-  }).then((completedata)=>{
-    console.log(completedata[0].status);
+  .then(function(response){
+    return response.json();
+  }).then((data){
+    console.log(data);
   })
 
 </script>
