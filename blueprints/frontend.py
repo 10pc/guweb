@@ -738,7 +738,7 @@ async def get_player_score(score_id:int=0, mods:str = "vn"):
             player_status = ["#000000", "Offline"]
 
     #Mods
-        if int(score['mods']):
+        if int(score['mods']) != 0:
             score['mods'] = f"+{Mods(int(score['mods']))!r}"
     return await render_template('score.html', score=score, user=user, map_info=map_info,
                                 grade_shadow=grade_shadow, group_list=group_list,
