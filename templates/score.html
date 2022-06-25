@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-<title>{{ user['name'] }} on {{ map_info['title'] }} [{{ map_info['diffname'] }}]</title>
+{% block title %} {{ user['name'] }} on {{ map_info['title'] }} [{{ map_info['diffname'] }}] {% endblock %}
 
 {% block header %}
 <script src="/static/js/asserts/vue.js"></script>
