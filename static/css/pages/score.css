@@ -28,6 +28,7 @@ a:hover {
     height: auto;
     background-color: #2e3538;
     text-align: left;
+    border-radius: 16px 16px 0px 0px
   }
 
   .main-banner > * {
@@ -69,7 +70,7 @@ a:hover {
       "score-banner-grade score-banner-score score-banner-score"
       "score-banner-grade score-banner-scoreinfo score-banner-replaydownload";
     padding: 10px 0;
-    min-height: 240px;
+    min-height: 210px;
     background-size: cover;
     background-position: 50%;
     background-repeat: no-repeat;
@@ -150,6 +151,7 @@ a:hover {
     grid-auto-flow: row;
     grid-template-areas:
       "user-card score-information .";
+    border-radius: 0px 0px 16px 16px;
   }
 
   .user-card {
