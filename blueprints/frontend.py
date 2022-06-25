@@ -638,9 +638,12 @@ async def get_profile_background(user_id: int):
     return b'{"status":404}'
 
 @frontend.route('/score/<score_id>')
+@frontend.route('/score/<score_id>/<mods>')
 async def get_player_score(score_id:int=0, mods:str = "vn"):
-    if not score_id:
+    if score_id == 0:
         return await flash('error', "This score does not exist!", "home")
+    if mods.lower() not in ["vn", "rx", "ap"]:
+        return await flash('error', "Valid mods are vn, rx and ap!", "home")
 
     # Check score
     score = await glob.db.fetch("SELECT * FROM scores WHERE id=%s", score_id)
@@ -707,7 +710,7 @@ async def get_player_score(score_id:int=0, mods:str = "vn"):
     if Privileges.Normal not in user_priv:
         group_list.append(["RESTRICTED", "#FFFFFF"])
     else:
-        if user['id'] in [3,4]:
+        if int(user['id']) in [3,4]:
             group_list.append(["OWNER", "#e84118"])
         if Privileges.Dangerous in user_priv:
             group_list.append(["DEV", "#9b59b6"])
@@ -732,7 +735,7 @@ async def get_player_score(score_id:int=0, mods:str = "vn"):
     #Get status
     async with glob.http.get(f"https://api.abypass.wtf/get_player_status?id={user['id']}") as resp:
         resp = await resp.json()
-        if resp['player_status']['online']:
+        if resp['player_status']['online'] == True:
             player_status = ["#38c714", "Online"]
         else:
             player_status = ["#000000", "Offline"]
