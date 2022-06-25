@@ -9,6 +9,7 @@ import time
 
 from cmyui.logging import Ansi
 from cmyui.logging import log
+from cmyui.osu import Mods
 from functools import wraps
 from PIL import Image
 from pathlib import Path
@@ -741,6 +742,8 @@ async def get_player_score(score_id:int=0, mods:str = "vn"):
             player_status = ["#000000", "Offline"]
 
     #Mods
+        if score['mods'] != 0:
+            score['mods'] = f"+{Mods(int(score['mods']))!r}"
     return await render_template('score.html', score=score, user=user, map_info=map_info,
                                 grade_shadow=grade_shadow, group_list=group_list,
                                 player_status=player_status, mode_mods=mods)
