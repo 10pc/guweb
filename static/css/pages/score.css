@@ -279,7 +279,7 @@ a:hover {
   }
 
   .is-max {
-    linear-gradient(
+    background: linear-gradient(
     45deg,
     rgba(255, 0, 0, 1) 0%,
     rgba(255, 154, 0, 1) 10%,
@@ -296,23 +296,23 @@ a:hover {
   }
 
   .is-300 {
-    linear-gradient(45deg, #7ed0ff, transparent);
+    background: linear-gradient(45deg, #7ed0ff, transparent);
   }
 
   .is-200 {
-    linear-gradient(45deg, #db36b0, transparent);
+    background: linear-gradient(45deg, #db36b0, transparent);
   }
 
   .is-100 {
-    linear-gradient(45deg, #5dd96d, transparent);
+    background: linear-gradient(45deg, #5dd96d, transparent);
   }
 
   .is-50 {
-    linear-gradient(45deg, #cfa736, transparent);
+    background: linear-gradient(45deg, #cfa736, transparent);
   }
 
   .is-miss {
-    linear-gradient(45deg, red, transparent);
+    background: linear-gradient(45deg, red, transparent);
   }
 
   .stat-value {
