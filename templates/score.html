@@ -32,7 +32,8 @@
                 <i class="mode-icon mode-mania"></i>
             {% endif %}
             <span style="background-color: #22282a; border-radius: 99999px; padding: 2px 8px; font-size: 12px"><i class="fas fa-star fa-xs" style="color: #def750;"></i> {{ map_info['diff'] }}</span>
-            <span style="font-weight: 400; font-size: 17px;">{{ map_info['diffname'] }}</span> mapped by <span style="font-weight: 400">{{ map_info['creator'] }}</span>
+            <span style="font-weight: 400; font-size: 17px;">{{ map_info['diffname'] }}</span>
+            <span style="font-weight: 400"> by {{ map_info['creator'] }}</span>
 
         </div>
     </div>
@@ -43,10 +44,15 @@
             <span style="text-shadow: 0 0 10px {{ grade_shadow }};">{{score['grade'] }}</span>
         </div>
         <div class="score-banner-score">
-            {{ score['score'] }}
+            <div class="score-score">
+              {{ score['score'] }}
+            </div>
+            <div class="score-pp">
+              {{ score['pp'] }}pp
+            </div>
         </div>
+
         <div class="score-banner-scoreinfo">
-            Played by <strong>{{ user['name'] }}</strong>
             Submitted on <strong>{{ score['play_time'] }}</strong>
             {% if score['mods'] != 0 %}
             With <strong>{{ score['mods'] }}</strong>
@@ -54,7 +60,7 @@
         </div>
         <div class="score-banner-replaydownload">
             <button type="button" class="replay-download-button" onclick=" window.open('https://api.abypass.wtf/get_replay?id={{ score['id'] }}','_blank')">
-                Download Replay
+                <i class="fa fa-file-arrow-down"></i>
             </button>
         </div>
     </div>
@@ -154,7 +160,7 @@
                             </div>
                             {% else %}
                             <div class="stat-value">
-                                {{ score['max_combo']}}x
+                                {{ score['max_combo']}}/{{map_info['max_combo']}}x
                             </div>
                             {% endif %}
                         </div>
@@ -210,7 +216,7 @@
                     gap: 5px 5px;
                     grid-auto-flow: row;
                     grid-template-areas:
-                      "acc max-combo pp"
+                      "pp acc max-combo"
                       "n300 n50 nmiss";
                     max-height: 150px !important;
                     height: 150px;
@@ -405,7 +411,7 @@
                     grid-template-rows: 1fr 1fr;
                     gap: 5px 5px;
                     grid-template-areas:
-                      "acc acc combo combo pp pp"
+                      "pp pp acc acc combo combo"
                       "max s300 s200 s100 s50 smiss";
                     max-height: 150px !important;
                     height: 150px;
