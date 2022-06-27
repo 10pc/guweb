@@ -679,8 +679,9 @@ async def get_player_score(score_id:int=0, mods:str = "vn"):
     user['country'] = user['country'].upper()
     user['banner'] = f"url(https://abypass.wtf/banners/{user['id']});"
     map_info['banner_link'] = f"url('https://assets.ppy.sh/beatmaps/{map_info['set_id']}/covers/cover.jpg');"
-    score['acc'] = round(float(score['acc']), 2)
+    score['acc'] = f"{round(float(score['acc']), 2)}%"
     score['pp'] = round(float(score['pp']), 2)
+    score['max_combo'] = f"{score['max_combo']}x"
     #Calculation
     grade_colors= {
         "F": "#ff5959",
@@ -743,7 +744,7 @@ async def get_player_score(score_id:int=0, mods:str = "vn"):
 
     #Mods
         if score['mods'] != 0:
-            score['mods'] = f"+{Mods(int(score['mods']))!r}"
+            score['mods'] = f"{Mods(int(score['mods']))!r}"
     return await render_template('score.html', score=score, user=user, map_info=map_info,
                                 grade_shadow=grade_shadow, group_list=group_list,
                                 player_status=player_status, mode_mods=mods)

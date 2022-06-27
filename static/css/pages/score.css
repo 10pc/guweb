@@ -129,12 +129,12 @@ a:hover {
     font-size: 14px;
     font-weight: 500;
     outline: none;
-    border-radius: 9001px;
+    border-radius: 40px;
     border-style: none;
     color: white;
     text-decoration: none;
     padding: 10px 15px;
-    margin-right: 40px;
+    margin-right: 10px;
     margin-bottom: -35px;
     transition: 0.2s;
   }
