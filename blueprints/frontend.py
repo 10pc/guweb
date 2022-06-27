@@ -681,7 +681,7 @@ async def get_player_score(score_id:int=0, mods:str = "vn"):
     map_info['banner_link'] = f"url('https://assets.ppy.sh/beatmaps/{map_info['set_id']}/covers/cover.jpg');"
     score['acc'] = f"{round(float(score['acc']), 2)}%"
     score['pp'] = round(float(score['pp']), 2)
-    score['max_combo'] = f"{score['max_combo']}x"
+    score['max_combo_fix'] = f"{score['max_combo']}x"
     #Calculation
     grade_colors= {
         "F": "#ff5959",
