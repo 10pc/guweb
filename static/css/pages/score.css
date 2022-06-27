@@ -123,6 +123,7 @@ a:hover {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    width: 234px;
   }
   .replay-download-button {
     background-color: #4084ac;
