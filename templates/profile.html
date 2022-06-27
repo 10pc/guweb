@@ -41,7 +41,10 @@
                             </a>
                         </div>
                         <div class="play-stats">
-                            {{ playstats(map)}}
+                            <% map['beatmap']['diff'].toFixed(2) %>*
+                            {% if score['mods'] != 0 %}
+                            +<% ("+ " + map[`mods_readable`] + " ").replace("NM", "").replace("RXNC", "NCRX").replace("APNC", "NCAP").replace("HDHRNC", "HDNCHR").replace("NFNC", "NCNF").replace("HRDT", "DTHR").replace("RX", "").replace("AP", "").replace("+ ", "").replace("+ ", "+") %>
+                            {% endif %}
                         </div>
                         <div class="map-date">
                             <time>
