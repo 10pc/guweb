@@ -106,6 +106,8 @@ a:hover {
     font-size: 70px;
     font-weight: 300;
     margin-bottom: -10px;
+    display: flex;
+    align-items: baseline;
   }
 
   .score-banner-scoreinfo {
