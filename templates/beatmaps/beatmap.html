@@ -35,5 +35,15 @@
     </div>
 </div>
 
+<script>
+  fetch("https://api.abypass.wtf/get_map_info?id=1911308")
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(data){
+    console.log(data[1].map.title)
+  })
+</script>
+
 <script src="/static/js/asserts/vue-flags.js"></script>
 {% endblock %}
