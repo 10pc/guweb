@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'base.html' %}
 {% block title %} Home {% endblock %}
 
@@ -131,3 +132,109 @@
 {% endif %}
 
 {% endblock %}
+=======
+{% extends 'base.html' %}
+{% block title %} Welcome! {% endblock %}
+
+{% block header %}
+<link rel="stylesheet" href="/static/css/pages/home.css">
+{% endblock %}
+
+{% block content %}
+
+{% if flash %}
+<div class='noti-banner noti-banner-warning'>
+  <div class="container">
+    <div class="noti-column">
+      <div class='noti-col noti-col-icon'></div>
+      <div class='noti-col noti-col-label'>
+        <div class='noti-bannertype'>
+          {% if status=='error' %}
+          Warning
+          {% elif status=='success' %}
+          Notice
+          {% endif %}
+        </div>
+        <div class='noti-bannertext'>
+          {% if status=='error' %}
+          Uh oh! Be careful!
+          {% elif status=='success' %}
+          Hey! Listen!
+          {% endif %}
+        </div>
+      </div>
+      <div class='noti-banner-text'>
+        {{ flash }}
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<div class="hero splash p-less is-fullheight-with-navbar" id="home-hero">
+  <div class="container flex">
+    <div class="columns flex-vcenter">
+      <div class="column flex-vcenter flex-lcenter is-size-2-desktop is-size-1-fullhd" id="title">
+        <h1 class="title is-spaced is-size-2-desktop is-size-1-fullhd">{{ appName() }}</h1>
+        <h2 class="subtitle">
+          The cheating experience you've been waiting for...
+        </h2>
+        <div class="server-stats-2">
+            <div class="server-stats-online">
+              <span><span id="online" style="color: mediumaquamarine;"></span> ONLINE</span>
+            </div>
+            <div class="server-stats-registered">
+              <span><span id="registered" style="color: lightskyblue;"></span> REGISTERED</span>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  fetch("https://api.abypass.wtf/get_player_count")
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(data){
+    console.log(data[0].online)
+    document.getElementById('online').innerHTML=data[0].online
+
+    console.log(data[0].total)
+    document.getElementById('registered').innerHTML=data[0].total
+  })
+
+</script>
+
+<style>
+  .server-stats-2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 13px;
+    font-weight: 500;
+    max-height: 24px !important;
+    width: 260px !important;
+    border-radius: 9001px;
+    background-color: rgb(120, 142, 171);
+    padding: 3px;
+    margin-bottom: 10px;
+    max-width: 350px !important;
+  }
+
+  .server-stats-online {
+    display: flex;
+    margin-left: 30px;
+    justify-content: flex-start;
+  }
+
+  .server-stats-registered {
+    display: flex;
+    margin-right: 30px;
+    justify-content: flex-end;
+  }
+</style>
+
+{% endblock %}
+>>>>>>> branch

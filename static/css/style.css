@@ -22,11 +22,12 @@ html {
 .footer {
   padding: 20px;
   margin-top: 39px;
+  align-self: center;
+  text-align-last: center;
 }
 
 .main-block {
   width: inherit;
-  background: hsl(var(--main), 10%, 15%);
 }
 
 /* stuffs */
@@ -37,6 +38,7 @@ html {
 
 .flex-vcenter {
   align-self: center;
+  text-align: center;
 }
 
 .flex-lcenter {
@@ -81,9 +83,8 @@ html {
 }
 
 .is-weeb {
-  background: hsl(var(--main), 30%, 50%);
-  border-top-right-radius: 16px;
-  border-top-left-radius: 16px;
+  background: #5491AD;
+  border-radius: 16px 16px 0px 0px;
 }
 
 .headericon {
@@ -723,12 +724,10 @@ a.foot-link {
 
 body::-webkit-scrollbar {
   width: 12px;
-  background-color: hsl(var(--main), 10%, 25%);
   border-bottom-right-radius: 8px;
 }
 body::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: hsl(var(--main), 15%, 40%);
 }
 
 [v-cloak] {

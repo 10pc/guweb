@@ -21,23 +21,23 @@
                 Leaderboards
             </a>
 
-            <!--<div class="navbar-item has-dropdown is-hoverable">
+            <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
                     Information
                 </a>
                 <div class="navbar-dropdown">
-                    <a class="navbar-item" href="/doc/rules">
+                    <a class="navbar-item" href="/rules">
                         Rules
                     </a>
-                    <a class="navbar-item" href="/discord">
-                        Discord
+                    <a class="navbar-item" href="/about">
+                        About
                     </a>
                     <hr class="navbar-divider">
-                    <a class="navbar-item" href="https://github.com/varkaria/guweb/issues/new">
-                        Report an issue
+                    <a class="navbar-item" href="/rankrequest">
+                        Request Map Ranking
                     </a>
                 </div>
-            </div>-->
+            </div>
 
             {% if session.authenticated and session.user_data['is_staff'] %}
             <a class="navbar-item" href="/admin">
@@ -50,6 +50,7 @@
             {% if session.authenticated %}
             <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
+                  <img src="https://a.abypass.wtf/{{ session.user_data['id'] }}" style="height: 100%; margin-right: 7px; border-radius: 9001px;">
                     {{ session.user_data['name'] }}
                 </a>
                 <div class="navbar-dropdown">

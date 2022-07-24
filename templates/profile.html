@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
-{% block title %} Profile {% endblock %}
+{% block title %} {{ user['name'] }}'s Profile {% endblock %}
+
+<script src="https://kit.fontawesome.com/550094edeb.js" crossorigin="anonymous"></script>
+
+{% macro playstats(map) %}
+<% map['beatmap']['diff'].toFixed(2) %>* <% ("+ " + map[`mods_readable`] + " ").replace("NM", "").replace("RXNC", "NCRX").replace("APNC", "NCAP").replace("HDHRNC", "HDNCHR").replace("NFNC", "NCNF").replace("HRDT", "DTHR").replace("RX", "").replace("AP", "").replace("+ ", "").replace("+ ", "+") %>
+{% endmacro %}
 
 {% macro scores(title, id) %}
 <div class="log-block" v-bind:class="{ 'load' : data.scores.{{ id }}.load }">
@@ -19,12 +25,23 @@
                     </div>
                     <div class="map-title-block">
                         <div class="map-title">
-                            <a class="beatmap-link">
-                                <% map.beatmap.artist %> - <% map.beatmap.title %> [<% map.beatmap.version %>] <!--<span v-if="map.mods != 0">+ <% modsStr(map.mods) %></span>-->
+                          <script>
+                              if (map.mods & 7) {
+                                  mods = "rx"
+                              }
+                              else if (map.mods & 13) {
+                                  mods = "ap"
+                              }
+                              else {
+                                  mods = "vn"
+                              }
+                          </script>
+                          <a class="beatmap-link" v-bind:href="'https://abypass.wtf/score/' + map.id">
+                                <% map.beatmap.artist %> - <% map.beatmap.title %> [<% map.beatmap.version %>]
                             </a>
                         </div>
                         <div class="play-stats">
-                            <% addCommas(map.score) %> / <% map.max_combo %><b>x</b>
+                            {{ playstats(map)}}
                         </div>
                         <div class="map-date">
                             <time>
@@ -40,7 +57,7 @@
                                 <div class="map-pp">
                                     <% map.pp.toFixed() %><span class="map-pp-unit">pp</span>
                                 </div>
-                                <div class="map-acc">accuracy:&nbsp;<b>
+                                <div class="map-acc"><% map[`max_combo`] %>x &nbsp;<b>
                                         <% map.acc.toFixed(2) %>%
                                     </b></div>
                             </div>
@@ -170,8 +187,20 @@
         </div>
         <div class="profile-flex">
             <div class="profile-avatar-area">
-                <img src="https://a.{{ domain() }}/{{ user['id'] }}" alt="avatar" class="rounded-avatar profile-avatar"
+              {% if 'authenticated' in session %}
+              {% if session['user_data']['id'] == user['id'] %}
+              <a href="/settings/avatar">
+                  <img src="https://a.{{ domain() }}/{{ user['id'] }}" alt="avatar" class="rounded-avatar profile-avatar"
                     onError="this.src='/static/images/avatar_notwork.png';">
+                  </a>
+                    {% else %}
+                    <img src="https://a.{{ domain() }}/{{ user['id'] }}" alt="avatar" class="rounded-avatar profile-avatar"
+                    onError="this.src='/static/images/avatar_notwork.png';">
+                    {% endif %}
+                    {% else %}
+                    <img src="https://a.{{ domain() }}/{{ user['id'] }}" alt="avatar" class="rounded-avatar profile-avatar"
+                    onError="this.src='/static/images/avatar_notwork.png';">
+                    {% endif %}
             </div>
             <div class="bar-selection mode-selects">
                 <div class="select-left">
@@ -201,42 +230,41 @@
                 </div>
             </div>
             <div class="bar-selection badge-selects">
-                <span>
-                    Badges not yet implemented!
-                </span>
+              {% if badges.length != 0 %}
+                  {% for b in badges %}
+                      <div class="badge">
+                          <div class="badge-icon" style="margin: 8px 2px 7px {{ b[2] }}px">
+                              <i class="fa-solid {{ b[1] }}"></i>
+                          </div>
+                          <div class="badge-text">{{ b[0] }}</div>
+                      </div>
+                  {% endfor %}
+              {% endif %}
             </div>
         </div>
     </div>
     <div class="second-block">
         <div class="columns is-marginless two-sides">
             <div class="column is-one-third" v-cloak>
-                <!--<div class="header" v-if='data.stats[`rank_global_${modegulag}`] != -1'>
+                <div class="header" v-if='data.stats.out[modegulag].rank != 0'>
                     <div class="title">
                         <i class="fas fa-user-friends"></i> Rank
                     </div>
                 </div>
-                <div class="stats-block rank-block" v-if='data.stats[`rank_global_${modegulag}`] != -1'>
+                <div class="stats-block rank-block" v-if='data.stats.out[modegulag].rank != 0'>
                     <table class="is-striped">
                         <tbody>
                             <tr>
                                 <td>Global rank</td>
                                 <td class="right-aligned">
                                     <span id="global-rank">
-                                        <% '#' + data.stats[`rank_global_${modegulag}`] %>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Country rank</td>
-                                <td class="right-aligned">
-                                    <span id="country-rank">
-                                        <% '#' + data.stats[`rank_country_${modegulag}`] %>
+                                        <% '#' + data.stats.out[modegulag].rank %>
                                     </span>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                </div>-->
+                </div>
                 <div class="header">
                     <div class="title">
                         <i class="fas fa-chart-pie"></i> Statistics
@@ -284,7 +312,7 @@
                             <tr>
                                 <td><b>Accuracy</b></td>
                                 <td class="right-aligned">
-                                    <% data.stats.out[modegulag].acc %>%
+                                    <% data.stats.out[modegulag].acc.toFixed(2) %>%
                                 </td>
                             </tr>
                         </tbody>
@@ -330,7 +358,7 @@
                         </article>
                     </div>
                 </div>
-                <!--<div class="level-block">
+                <div class="level-block">
                     <div class="columns is-marginless is-2">
                         <div class="column level-bar is-paddingless">
                             <div class="progress-level"></div>
@@ -339,7 +367,7 @@
                             <% data.stats[`level_${modegulag}`] %>
                         </div>
                     </div>
-                </div>-->
+                </div>
             </div>
             <div class="column">
                 {{ scores('Best Scores', 'best')}}
@@ -363,10 +391,16 @@
         }
     {% endif %}
     {% if user['customisation']['background'] == True %}
-        body {
+        html {
             background: linear-gradient(hsl(var(--main), 25%, 25%, 20%), hsl(var(--main), 10%, 10%)), url("/backgrounds/{{ user['id'] }}");
             background-size: cover;
             background-clip: content-box;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        body {
+            background: rgba(0, 0, 0, 0.0);
         }
     {% endif %}
 </style>

@@ -10,13 +10,14 @@ a:hover {
 }
 
 .main-block {
-  background-color: hsl(var(--main), 10%, 15%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0px 0px 16px 16px;
   margin-top: 0;
   width: auto;
 }
 
 .leaderboard-banner {
-  background-color: hsl(var(--main), 30%, 50%);
+  background-color: rgba(0, 0, 0, 0.3);
   height: 194px;
   border-radius: 0;
   border-top-right-radius: 8px;
@@ -118,8 +119,7 @@ table th {
   background-position-x: 50%;
   align-items: center;
   flex-direction: column;
-  border-top-right-radius: 16px;
-  border-top-left-radius: 16px;
+  border-radius: 16px 16px 0px 0px;
   justify-content: space-between;
   position: relative;
   padding: 0px 36px;

@@ -16,6 +16,7 @@
 
 .main-block {
   width: 1024px;
+  background-color: blue;
 }
 
 .my-con {
@@ -45,10 +46,12 @@
   }
   #home-hero .columns.flex-vcenter {
     padding: 0 20px;
+
   }
   .main-block {
     width: initial;
     height: 285px;
+
   }
   #mascot {
     display: none !important;
@@ -61,10 +64,33 @@
   }
 }
 
-.splash {
-  background: hsl(var(--main), 40%, 40%);
-}
-
 .footer {
   margin: 0;
+}
+
+.server-stats-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 500;
+  max-height: 24px !important;
+  width: 260px !important;
+  border-radius: 9001px;
+  background-color: rgb(120, 142, 171);
+  padding: 3px;
+  margin-bottom: 10px;
+  max-width: 350px !important;
+}
+
+.server-stats-online {
+  display: flex;
+  margin-left: 30px;
+  justify-content: flex-start;
+}
+
+.server-stats-registered {
+  display: flex;
+  margin-right: 30px;
+  justify-content: flex-end;
 }

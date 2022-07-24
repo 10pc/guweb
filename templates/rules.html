@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+{% block header %}
+<link rel="stylesheet" href="/static/css/pages/rules.css">
+{% endblock %}
+{% block content %}
+{% if flash %}
+<div class='noti-banner noti-banner-warning'>
+   <div class="container">
+      <div class="noti-column">
+         <div class='noti-col noti-col-icon'></div>
+         <div class='noti-col noti-col-label'>
+            <div class='noti-bannertype'>
+               {% if status=='error' %}
+               Warning
+               {% elif status=='success' %}
+               Notice
+               {% endif %}
+            </div>
+            <div class='noti-bannertext'>
+               {% if status=='error' %}
+               Uh oh! Be careful!
+               {% elif status=='success' %}
+               Hey! Listen!
+               {% endif %}
+            </div>
+         </div>
+         <div class='noti-banner-text'>
+            {{ flash }}
+         </div>
+      </div>
+   </div>
+</div>
+{% endif %}
+<div class="hero splash p-less is-fullheight-with-navbar" id="home-hero">
+<div class="container flex">
+<div class="columns flex-vcenter">
+   <div class="column flex-vcenter flex-lcenter is-size-2-desktop is-size-1-fullhd" id="title">
+      <h1 class="title is-spaced is-size-2-desktop is-size-1-fullhd">Rules</h1>
+      <h2 class="subtitle">
+        1. Timewarp is <b>not</b> allowed.<br>
+        2. No extremely blatant cheats. This includes auto (any form), CS Changer, Replay Editing, or Score/PP multiplier (not including SMLWR).<br>
+        3. Autopilot with relax hack enabled is not allowed.<br>
+        4. AR Changers and HD removers are allowed.<br>
+        5. FL remover is NOT allowed, every FL play must include a liveplay.<br>
+        6. Multi-accounting is not allowed.<br>
+        7. You may not use more than one cheat instances at once.<br>
+      <br/>
+      <h1 class="title is-spaced is-size-2-desktop is-size-1-fullhd">Aim Assist/Correction Rules</h1>
+      <h2 class="subtitle">
+        Aim assist and aim correction are allowed, however your settings must be blow or equal to the following.<br>
+        <br>
+        <strong>osu!buddy</strong><br>
+        Aim Speed: 7<br>
+        Aim Start Distance: 420<br>
+        Aim Stop Distance: 50+<br>
+        <br>
+        <strong>assist.games</strong><br>
+        Strength: 66<br>
+        <br>
+        <strong>Abypass Client/Skoot.er</strong><br>
+        Strength: 35<br>
+        <br>
+        <strong>Natsumi</strong><br>
+        Strength: 4<br>
+        <br>
+        <strong>Maple V1</strong> <b>(V2 and V3 are not allowed)</b><br>
+        Strength: 0.9 <br>
+        Base FOV: 100 <br>
+        Maximum FOV (scaling): 3 <br>
+        Minimum FOV (total): 255 <br>
+        Sliderball Deadzone: 13 <br>
+        Strength multiplier: 1.0 <br>
+        Assist deadzone: 3 <br>
+        <br>
+        <b>Cheats that are not listed here are allowed. These rules may change in the future.</b>
+        <br>
+      </h2>
+   </div>
+   <div class="column flex flex-lcenter" id="mascot">
+      <div class="gulag-avatar"></div>
+   </div>
+</div>
+{% endblock %}

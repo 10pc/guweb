@@ -2,7 +2,7 @@
 
 <head>
   <!-- Title -->
-  <title>{{ appName() }} - {% block title %}{% endblock %}</title>
+  <title>{% block title %}{% endblock %} | {{ appName() }}</title>
 
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
@@ -23,8 +23,12 @@
     integrity="sha512-/DXTXr6nQodMUiq+IUJYCt2PPOUjrHJ9wFrqpJ3XkgPNOZVfMok7cRw6CSxyCQxXn6ozlESsSh1/sMCTF1rL/g=="
     crossorigin="anonymous"></script>
 
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://unpkg.com/@vueup/vue-quill@beta"></script>
+  <link rel="stylesheet" href="https://unpkg.com/@vueup/vue-quill@beta/dist/vue-quill.snow.prod.css">
+
   <!-- Bulma -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HakuraSukinoe/bulma-hsl/bulma.min-v7.css" />
+  <link rel="stylesheet" href="/static/css/bulma.css" />
 
   <!-- Font awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
@@ -53,7 +57,14 @@
   <script src="/static/js/main.js" crossorigin="anonymous"></script>
 
   <!-- Customisation -->
+  <style>
+  body{
+    background-image: url("https://cutewallpaper.org/22/study-anime-wallpapers/1699428993.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  </style>
   {% block bottom %}{% endblock %}
 </body>
-
 </html>
